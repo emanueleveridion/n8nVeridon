@@ -76,6 +76,9 @@ RUN cd /usr/local/lib/node_modules/n8n/node_modules/pdfjs-dist && npm install @n
 # Install npm 11.4.1 to fix the vulnerable cross-spawn dependency
 RUN npm install -g npm@11.4.1
 
+# Install mammoth globally so it can be used in Function nodes
+RUN npm install -g mammoth
+
 ENV SHELL /bin/sh
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
